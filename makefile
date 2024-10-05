@@ -8,8 +8,7 @@ format:
 	black .
 
 lint:
-	pylint --disable=R,C sql_interaction.py
-	pylint --disable=R,C sql_test.py
+	pylint *.py
 
 test:
 	pytest sql_test.py
