@@ -13,13 +13,17 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: 3.x
+        python-version: 3.12
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install pytest
 
+    - name: lint with pylint
+      run: |
+        make lint
+
     - name: Run database CRUD tests
       run: |
-        python -m unittest discover tests
+        python -m unittest discover sql_test
