@@ -37,6 +37,10 @@ Unit tests are included to verify the functionality. To run the tests:
 python -m unittest sql_test.py
 ```
 
+## Successful Implementation
+
+![success](sql_py_interaction.jpg)
+
 ## License
 This project is licensed under the MIT License.
 

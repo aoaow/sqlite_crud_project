@@ -3,10 +3,8 @@ import sqlite3
 def connect_db(db_name="sample.db"):
     try:
         conn = sqlite3.connect(db_name)
-        print("successful connected!")
         return conn
     except sqlite3.Error as e:
-        print(f"error while connecting to database: {e}")
         return None
     
 def create_table(conn):
