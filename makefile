@@ -1,14 +1,12 @@
-.PHONY: install format lint test
-
 install:
-	pip install --upgrade pip &&\
-		pip install -r requirements.txt
+		pip install --upgrade pip &&\
+			pip install -r requirements.txt
 
 format:
-	black .
+		black .
 
 lint:
-	pylint *.py
+		pylint *.py
 
 test:
-	pytest sql_test.py
+		pytest sql_test.py
