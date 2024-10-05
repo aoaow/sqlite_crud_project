@@ -11,13 +11,13 @@ def connect_db(db_name="sample.db"):
     
 def create_table(conn):
     cursor = conn.cursor()
-    cursor.execute('''
-                   CREATE TABLE IF NOT EXIST users (
+    cursor.execute('''CREATE TABLE IF NOT EXISTS users (
                    id INTEGER PRIMARY KEY,
                    name TEXT NOT NULL,
                    age INTEGER NOT NULL
                    );
-                   ''')
+                   '''
+                   )
     conn.commit()
 
 def insert_user(conn, name: str, age: int):
@@ -48,7 +48,7 @@ def custom_queries(conn):
     # First query: Get users older than 25
 
     age_threshold = 25
-    cursor.execute("SELECT * FROM users WHERE age > ?", (age_threshold))
+    cursor.execute("SELECT * FROM users WHERE age > ?", (age_threshold,))
     result = cursor.fetchall()
     for user in result:
         print(user)
