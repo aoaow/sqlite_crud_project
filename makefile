@@ -5,8 +5,5 @@ install:
 format:
 		black .
 
-lint:
-		pylint *.py
-
 test:
 		pytest sql_test.py

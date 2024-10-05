@@ -11,13 +11,7 @@ def connect_db(db_name="sample.db"):
     
 def create_table(conn):
     cursor = conn.cursor()
-    cursor.execute('''CREATE TABLE IF NOT EXISTS users (
-                   id INTEGER PRIMARY KEY,
-                   name TEXT NOT NULL,
-                   age INTEGER NOT NULL
-                   );
-                   '''
-                   )
+    cursor.execute('''CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL);''')
     conn.commit()
 
 def insert_user(conn, name: str, age: int):

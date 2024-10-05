@@ -47,10 +47,8 @@ class TestCRUDOperations(unittest.TestCase):
     def test_read_users(self):
         insert_user(self.conn, "ReadUser", 28)
         insert_user(self.conn, "ReadUser2", 32)
-        cursor = self.conn.cursor()
-        cursor.execute("SELECT COUNT(*) FROM users")
-        count = cursor.fetchone()[0]
-        self.assertGreaterEqual(count, 2)
+        users = read_users(self.conn)
+        self.assertEqual(len(users), 2)
 
 if __name__ == '__main__':
     unittest.main()
