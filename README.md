@@ -3,6 +3,9 @@
 ## Overview
 This project is a Python script that demonstrates CRUD (Create, Read, Update, Delete) operations on an SQLite database. The script includes functions to connect to the database, create a table, insert data, read data, update records, and delete records, along with custom SQL queries. Additionally, unit tests are provided to ensure the functionality of the `sql_interaction.py`.
 
+## Week 6 Update
+In week 6, I updated a complex query in file `complex_sql_query.py`. This query would create two tables: employess and departments. In the emloyee table, you would expect employees in different department with their salaries. In the department table, you would expect it contains department name corresponding to the id. The query woulf find out the total salaries by different departments and rank them descendingly. I also include a test file `test_complex_sql_query.py`
+
 ## Features
 - Connect to an SQLite database
 - Create a `users` table
