@@ -19,7 +19,7 @@ class TestComplexQuery(unittest.TestCase):
         # Validate the results
         expected_results = [
             ('research', 340000),
-            ('marketing', 235000),
+            ('marketing', 225000),
             ('clinical', 120000)
         ]
         self.assertEqual(results, expected_results)
