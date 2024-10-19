@@ -1,8 +1,7 @@
 from sql_interaction import connect_db
 
     
-def complex_query():
-    conn = connect_db()
+def complex_query(conn):
     cursor = conn.cursor()
     # create table 'employees'
     cursor.execute('''CREATE TABLE IF NOT EXISTS employees 
@@ -49,4 +48,7 @@ def complex_query():
 
 if __name__ == "__main__":
 
-    complex_query()
+    conn = connect_db()
+    if conn:
+        complex_query(conn)
+        conn.close()
