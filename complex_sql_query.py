@@ -35,7 +35,13 @@ def complex_query(conn):
     # and then we group by department id so that we could get the department total salaries
     # rank the total salaries by deparment descendingly
 
+    results = cursor.fetchall()
+    for row in results:
+        print(row)
+
     conn.commit()
+    return results
+
 
 
 if __name__ == "__main__":
