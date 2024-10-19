@@ -30,7 +30,7 @@ def complex_query(conn):
     cursor.execute('''SELECT d.name AS dpt_name, SUM(e.salary) AS total_salary
                    FROM employees e LEFT JOIN departments d ON e.dpt_id=d.id
                    GROUP BY d.id
-                   ORDER BY e.salary DESC''')
+                   ORDER BY total_salary DESC''')
     # we left join employees and departments to get the department name
     # and then we group by department id so that we could get the department total salaries
     # rank the total salaries by deparment descendingly
