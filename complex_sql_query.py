@@ -25,7 +25,7 @@ def complex_query(conn):
     cursor.execute('''INSERT INTO users (id, name) VALUES 
                    (1, 'marketing'),
                    (2, 'clinical'),
-                   (3, 'research);''')
+                   (3, 'research');''')
     # complex query to rank the highest salary descendingly by departments
     cursor.execute('''SELECT d.name AS dpt_name, SUM(e.salary) AS total_salary
                    FROM employees e LEFT JOIN departments d ON e.dpt_id=d.id
@@ -40,7 +40,6 @@ def complex_query(conn):
         print(row)
 
     conn.commit()
-    conn.close()
 
     return results
 
