@@ -12,12 +12,12 @@ def complex_query():
                    salary INTEGER NOT NULL);''')
     # insert users
     cursor.execute('''INSERT INTO employees (id, name, dpt_id, salary) VALUES 
-                   (1, Amy, 1, 89000),
-                   (2, Bob, 1, 70000),
-                   (3, Cindy, 1, 66000),
-                   (4, David, 3, 100000),
-                   (5, Eleanor, 3, 240000),
-                   (6, Frya, 2, 120000);''')
+                   (1, 'Amy', 1, 89000),
+                   (2, 'Bob', 1, 70000),
+                   (3, 'Cindy', 1, 66000),
+                   (4, 'David', 3, 100000),
+                   (5, 'Eleanor', 3, 240000),
+                   (6, 'Frya', 2, 120000);''')
     # create table "department"
     # records the corresponding departments
     cursor.execute('''CREATE TABLE IF NOT EXISTS departments 
