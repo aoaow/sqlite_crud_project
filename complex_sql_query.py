@@ -9,7 +9,7 @@ def complex_query(conn):
                    name TEXT NOT NULL, 
                    dpt_id INTEGER NOT NULL,
                    salary INTEGER NOT NULL);''')
-    # insert users
+    # insert employees
     cursor.execute('''INSERT INTO employees (id, name, dpt_id, salary) VALUES 
                    (1, 'Amy', 1, 89000),
                    (2, 'Bob', 1, 70000),
@@ -22,7 +22,7 @@ def complex_query(conn):
     cursor.execute('''CREATE TABLE IF NOT EXISTS departments 
                    (id INTEGER PRIMARY KEY, 
                    name TEXT NOT NULL);''')
-    cursor.execute('''INSERT INTO users (id, name) VALUES 
+    cursor.execute('''INSERT INTO departments (id, name) VALUES 
                    (1, 'marketing'),
                    (2, 'clinical'),
                    (3, 'research');''')
