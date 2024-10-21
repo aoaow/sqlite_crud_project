@@ -3,9 +3,9 @@ import os
 
 def connect_db():
     # Get connection details from environment variables or replace with hardcoded values
-    server_hostname = os.getenv('DATABRICKS_SERVER_HOSTNAME', 'your-server-hostname')
-    http_path = os.getenv('DATABRICKS_HTTP_PATH', 'your-http-path')
-    access_token = os.getenv('DATABRICKS_ACCESS_TOKEN', 'your-access-token')
+    server_hostname = os.getenv('DATABRICKS_SERVER_HOSTNAME', 'dbc-c95fb6bf-a65d.cloud.databricks.com')
+    http_path = os.getenv('DATABRICKS_HTTP_PATH', '/sql/1.0/warehouses/2d6f41451e6394c0')
+    access_token = os.getenv('DATABRICKS_ACCESS_TOKEN', '4f2543799d210db9cfe0c07e634b135653c02539b885ec143f0b2d8374c729c0')
 
     try:
         # Establish a connection to Databricks SQL
