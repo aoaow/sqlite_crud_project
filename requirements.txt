@@ -4,4 +4,3 @@ click
 black
 pytest-cov
 databricks-sql-connector
-dotenv
