@@ -4,8 +4,9 @@
         python-version: 3.12
 
 install:
-		pip install --upgrade pip &&\
-			pip install -r requirements.txt
+		pip install --upgrade pip
+		pip install -r requirements.txt
+		pip install databricks-sql-connector
 
 format:
 		black .
