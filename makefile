@@ -12,5 +12,5 @@ format:
 		black .
 
 test:
-		pytest sql_test.py
-		pytest test_complex_sql_query.py
+	pytest sql_test.py
+	pytest test_complex_sql_query.py
