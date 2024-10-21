@@ -1,6 +1,5 @@
 import unittest
-from sql_interaction import connect_db
-from complex_sql_query import complex_query
+from complex_sql_query import connect_db, complex_query
 
 
 class TestComplexQuery(unittest.TestCase):
