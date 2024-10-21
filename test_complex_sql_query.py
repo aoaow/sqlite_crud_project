@@ -1,7 +1,6 @@
 import unittest
 from complex_sql_query import connect_db, complex_query
 
-
 class TestComplexQuery(unittest.TestCase):
     def setUp(self):
         # Set up an in-memory database for testing
