@@ -23,7 +23,7 @@ def complex_query(conn):
     cursor = conn.cursor()
 
     # Complex query to rank the highest salary descendingly by departments
-    cursor.execute('''USE my_databse;''')
+    cursor.execute('''USE my_database;''')
     cursor.execute('''SELECT d.name as dpt_name, SUM(e.salary) as total_salary
                       FROM employees e LEFT JOIN departments d ON e.dpt_id = d.id
                       GROUP BY d.id
