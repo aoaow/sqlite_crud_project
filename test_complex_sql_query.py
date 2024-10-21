@@ -4,7 +4,7 @@ from complex_sql_query import connect_db, complex_query
 class TestComplexQuery(unittest.TestCase):
     def setUp(self):
         # Set up an in-memory database for testing
-        self.conn = connect_db(':memory:')
+        self.conn = connect_db()
         self.cursor = self.conn.cursor()
 
     def tearDown(self):
