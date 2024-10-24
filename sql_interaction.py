@@ -20,9 +20,11 @@ def insert_user(conn, name: str, age: int):
 def read_users(conn):
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM users")
+    conn.commit()
     rows = cursor.fetchall()
     for row in rows:
         print(row)
+    return rows
 
 def update_user_age(conn, user_id, new_age):
     cursor = conn.cursor()
