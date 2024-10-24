@@ -1,36 +1,42 @@
 import unittest
+from unittest.mock import patch, MagicMock
 from complex_sql_query import connect_db, complex_query
-import os
 
 class TestComplexQuery(unittest.TestCase):
-    def setUp(self):
-        # Set up connection
-        # Only load .env locally
-        if os.getenv('GITHUB_ACTIONS') != 'true':
-            from dotenv import load_dotenv
-            load_dotenv()
-        server_hostname = os.getenv('DATABRICKS_SERVER_HOSTNAME')
-        http_path = os.getenv('DATABRICKS_HTTP_PATH')
-        access_token = os.getenv('DATABRICKS_ACCESS_TOKEN')
+    @patch('complex_sql_query.connect_db')
+    def setUp(self, mock_connect_db):
+        # Create a mock connection object
+        self.mock_conn = MagicMock()
+        self.mock_cursor = MagicMock()
+        self.mock_conn.cursor.return_value = self.mock_cursor
 
-        self.conn = connect_db(server_hostname, http_path, access_token)
+        # Configure the mock to return our mock connection
+        mock_connect_db.return_value = self.mock_conn
+
+        # No need to set up environment variables or actual connection
+        self.conn = connect_db()
         self.cursor = self.conn.cursor()
 
     def tearDown(self):
-        # Close the connection after each test
+        # Close the mock connection
         self.conn.close()
 
     def test_complex_query(self):
-        # Execute the complex query function
-        results = complex_query(self.conn)
-        # Validate the results
+        # Set up expected results
         expected_results = [
             ('research', 340000),
             ('marketing', 225000),
             ('clinical', 120000)
         ]
-        self.assertEqual(results, expected_results)
 
+        # Configure the mock cursor to return expected results
+        self.mock_cursor.fetchall.return_value = expected_results
+
+        # Execute the complex query function
+        results = complex_query(self.conn)
+
+        # Validate the results
+        self.assertEqual(results, expected_results)
 
 if __name__ == "__main__":
     unittest.main()
