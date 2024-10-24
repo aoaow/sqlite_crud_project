@@ -31,4 +31,5 @@ jobs:
         DATABRICKS_HTTP_PATH: ${{ secrets.DATABRICKS_HTTP_PATH }}
         DATABRICKS_ACCESS_TOKEN: ${{ secrets.DATABRICKS_ACCESS_TOKEN }}
       run: |
-        python -m unittest discover test_complex_sql_query
+        python -m unittest discover test_complext_sql_query
+      
