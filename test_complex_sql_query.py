@@ -1,10 +1,13 @@
 import unittest
 from unittest.mock import patch, MagicMock
 from complex_sql_query import connect_db, complex_query
+import os
 
 class TestComplexQuery(unittest.TestCase):
     @patch('complex_sql_query.connect_db')
     def setUp(self, mock_connect_db):
+        if os.getenv('CI') and not os.getenv('DATABRICKS_ACCESS_TOKEN'):
+            self.skipTest("Skipping test: Databricks credentials not available.")
         # Create a mock connection object
         self.mock_conn = MagicMock()
         self.mock_cursor = MagicMock()
