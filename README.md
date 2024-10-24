@@ -1,5 +1,7 @@
 # SQLite CRUD Operations Project
 
+[![CI](https://github.com/aoaow/sqlite_crud_project/actions/workflows/main.yml/badge.svg)](https://github.com/aoaow/sqlite_crud_project/actions/workflows/main.yml)
+
 ## Overview
 This project is a Python script that demonstrates CRUD (Create, Read, Update, Delete) operations on an SQLite database. The script includes functions to connect to the database, create a table, insert data, read data, update records, and delete records, along with custom SQL queries. Additionally, unit tests are provided to ensure the functionality of the `sql_interaction.py`.
 
