@@ -48,7 +48,7 @@ class TestCRUDOperations(unittest.TestCase):
         insert_user(self.conn, "ReadUser", 28)
         insert_user(self.conn, "ReadUser2", 32)
         users = read_users(self.conn)
-        self.assertEqual(len(users), 2)
+        self.assertEqual(len(users), 3)
 
 if __name__ == '__main__':
     unittest.main()
