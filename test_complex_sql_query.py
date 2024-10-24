@@ -6,7 +6,7 @@ import os
 class TestComplexQuery(unittest.TestCase):
     def setUp(self):
         # Set up connection
-        load_dotenv()
+        load_dotenv(override=False)
         server_hostname = os.getenv('DATABRICKS_SERVER_HOSTNAME')
         http_path = os.getenv('DATABRICKS_HTTP_PATH')
         access_token = os.getenv('DATABRICKS_ACCESS_TOKEN')
