@@ -1,6 +1,5 @@
 import unittest
 from complex_sql_query import connect_db, complex_query
-from dotenv import load_dotenv
 import os
 
 class TestComplexQuery(unittest.TestCase):
